@@ -134,7 +134,10 @@ class BookingTransactionResource extends Resource
                     ->searchable()
                     ->alignCenter(),
                 TextColumn::make('total_amount')
-                    ->alignCenter(),
+                    ->label('Total Amount')
+                    ->formatStateUsing(fn ($state) => 'IDR ' . number_format($state, 0, '.', ','))
+                    ->alignCenter()
+                    ->sortable(),
                 IconColumn::make('is_paid')
                     ->boolean()
                     ->alignCenter()
