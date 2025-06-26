@@ -31,7 +31,7 @@
                             {{ $ticket->name }}
                         </h1>
                         <div class="flex items-center gap-[6px]">
-                            <img src="{{ Storage::url($ticket->category->icon) }}" class="w-[22px] h-[22px]"
+                            <img src="{{ Storage::url($ticket->category->icon_white) }}" class="w-[22px] h-[22px]"
                                 alt="icon">
                             <p class="text-sm leading-[18px] text-white">
                                 {{ $ticket->category->name }}
@@ -180,7 +180,7 @@
                 </p>
                 <p class="text-sm leading-[26px] text-[#70758F]">/person</p>
             </div>
-            <a href="booking.html">
+            <a href="{{ route('front.booking', $ticket->slug) }}">
                 <div class="flex items-center p-1 pl-5 w-fit gap-4 rounded-full bg-[#13181D]">
                     <p class="font-bold text-white">Book Now</p>
                     <img src="{{ asset('assets/images/icons/coupon.svg') }}" class="w-[50px] h-[50px]"

@@ -36,6 +36,10 @@ class CategoryResource extends Resource
                     ->image()
                     ->directory('categories')
                     ->required(),
+                FileUpload::make('icon_white')
+                    ->image()
+                    ->directory('categories')
+                    ->required(),
             ]);
     }
 
@@ -46,6 +50,7 @@ class CategoryResource extends Resource
                 TextColumn::make('name')
                     ->searchable(),
                 ImageColumn::make('icon'),
+                ImageColumn::make('icon_white'),
             ])
             ->filters([
                 //
